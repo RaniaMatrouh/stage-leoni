@@ -1,9 +1,11 @@
 package com.example.stage.Controllers;
 
-import com.example.stage.ServiceImpl.EmailService;
+import com.example.stage.ServiceImpl.EmailSenderService;
 import com.example.stage.ServiceInterface.IIncident;
 import com.example.stage.entites.Incident;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +16,6 @@ import java.util.List;
 public class IncidentController {
     @Autowired
     IIncident incidentService;
-    @Autowired
-    private EmailService emailService;
 
 
     @PostMapping("/add")

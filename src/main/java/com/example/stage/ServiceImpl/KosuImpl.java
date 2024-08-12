@@ -2,6 +2,7 @@ package com.example.stage.ServiceImpl;
 
 import com.example.stage.Repository.KosuRepository;
 import com.example.stage.ServiceInterface.IKosu;
+import com.example.stage.entites.Incident;
 import com.example.stage.entites.Kosu;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,11 @@ public class KosuImpl implements IKosu {
     @Override
     public void deleteKosu(Integer id) {
         kosuRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Kosu> getAllKosu() {
+        return kosuRepository.findAll();
     }
 
 }

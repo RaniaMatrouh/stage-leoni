@@ -9,5 +9,6 @@ public interface IKosu {
     Kosu addKosu(Kosu kosu);
     Kosu updateKosu(Integer id, Kosu kosuDetails);
     void deleteKosu(Integer id);
+    List<Kosu> getAllKosu();
 
 }

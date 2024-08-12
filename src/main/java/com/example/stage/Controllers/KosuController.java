@@ -28,4 +28,8 @@ public class KosuController {
     public void deleteKosu(@PathVariable Integer id) {
         kosuService.deleteKosu(id);
     }
+    @GetMapping("/all")
+    public List<Kosu> getAllKosu() {
+        return kosuService.getAllKosu();
+    }
 }

@@ -17,11 +17,15 @@ import java.util.Set;
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idUser;
-    private String nom;
+    private Integer Id;
+    private String username;
     private String email;
+    private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
+
+
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
     private Set<Kosu> Kosus;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
@@ -30,5 +34,5 @@ public class User implements Serializable {
     @ManyToOne
     Admin admin;
 
+    }
 
-}
