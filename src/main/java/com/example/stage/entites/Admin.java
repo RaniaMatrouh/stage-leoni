@@ -20,6 +20,7 @@ public class Admin implements Serializable {
     private Integer idAdmin;
     private String nomAdmin;
     private String email;
+    private String prenom;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="admin")
     private Set<User> Users;
 
